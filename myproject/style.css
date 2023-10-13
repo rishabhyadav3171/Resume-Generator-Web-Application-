@@ -1,0 +1,27 @@
+#cv-form{
+   
+
+}
+#cv-template{
+    display: none;
+}
+.myimg{
+    border: 1px solid rgb(23, 69, 129);
+    box-sizing: border-box;
+    box-shadow: 12px 6px 12px rgb(203, 25, 25);
+    
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    
+
+}
+.background{
+    background-color: rgb(12, 10, 120);
+}
+body{
+   
+    text-shadow: 2px 3px 6px red;
+    
+    
+}

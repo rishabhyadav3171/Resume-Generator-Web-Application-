@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder </title>
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Builder </h1>
+        <p class="text-center"> Mr. Rishabh Yadav</p>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- first column -->
+                <h3>Personal Information</h3>
+                <div class="form-group mt-2">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Contact</label>
+                    <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+                </div>
+                <!-- Email -->
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Email id </label>
+                    <input type="text" style="color: blue;" id="emailField" placeholder="Enter here" class="form-control">
+                </div>
+                <!-- Upload Image -->
+                <div class="form-group mt-2">
+                    <label for="imageField">Your Photo </label>
+                    <input type="file" id="image-file" accept="image/*" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea rows="3" id="addressField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+               
+    
+                <p class="text-secondary my-3">Important Links</p>
+                <div class="form-group mt-2">
+                    <label for="fbField">Facebook</label>
+                    <input type="text" style="color: blue;" id="fbField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" style="color:blue" id="instaField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedField" >LinkedIn</label>
+                    <input type="text" style="color:blue" id="linkedField" placeholder="Enter here" class="form-control">
+                </div>
+                
+ 
+            </div>
+            <div class="col-md-6">
+                <!-- second columnm -->
+                <h3 >Professional Information </h3>
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea rows="4" id="objectiveField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control weField"></textarea>
+                    <!-- new textarea -->
+               
+                    <div class="container text-center mt-2" id="weAddButton">
+                     <button onclick="addNewWEField()" class="btn btn-primary btn-sm">add</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control eqField"></textarea>
+                    <div class="container text-center mt-2" id="aqAddButton">
+                     <button onclick="addNewAQField()" class="btn btn-primary btn-sm">add</button>
+                    </div>
+                </div>
+                <!-- skills -->
+                <div class="form-group mt-2" id="sk">
+                    <label for="">Skills</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control skField"></textarea>
+                    <div class="container text-center mt-2" id="skAddButton">
+                     <button onclick="addNewSKField()" class="btn btn-primary btn-sm">add</button>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button  onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+    <!-- cv-templet -->
+    <!-- here goes html code -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first column -->
+                 <img src="/images.png" alt="" srcset=""  id="image-preview" class="img-fluid myimg">
+                 <div class="container mt-2">
+                     <p id="nameT1">Rishabh  Yadav</p>
+                     <p id="contactT"><i class="bi bi-telephone-forward-fill"></i>9889373612 ,9933425678</p>
+                     <p id="emailT">rishabhyadav07860@gmail.com</p>
+                     <p id="addressT">Vill- Nasira ,Post-Lapari, Dist-Jaunpur</p>
+                     <hr/>
+                     <p><a id="fbT" href="http://facebook.com" target="_blank">facebook</a></p>
+                     <p><a id="instaT" href="http://instagram.com" target="_blank"> Instagram</a></p>
+                     <p><a id="linkedT" href="http://LinkedIn.com" target="_blank">Linkedin</a></p>
+                 </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second column -->
+                <h1 class="text-center " id="nameT2" style="font-weight: 980;">Rishabh Yadav</h1>
+                <!-- objective card -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3  >Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nemo nihil repellat suscipit, velit laudantium hic, doloribus vero animi, aperiam aut
+                             perferendis. Nesciunt, 
+                            libero voluptas? Quasi ipsa harum vel tenetur.</p>
+                    </div>
+                </div>
+                <!-- WORK EXPERIENCE -->
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body ">
+                        <ul id="weT">
+                          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque incidunt minima similique ducimus, laboriosam quia consectetur vitae enim ad cum!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, possimus.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus molestias quos tenetur doloremque fugit harum eligendi nisi delectus nostrum odio.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ACADEMIC QUALIFICATION -->
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body ">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, facilis neque! Commodi sequi assumenda deleniti. Corporis sapiente perspiciatis id distinctio.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, perspiciatis?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta natus iusto ipsa nulla facilis quaerat commodi a est? Vitae, quam.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- skills -->
+                <div class="card my-2">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body ">
+                        <ul id="skT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, facilis neque! Commodi sequi assumenda deleniti. Corporis sapiente perspiciatis id distinctio.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, perspiciatis?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta natus iusto ipsa nulla facilis quaerat commodi a est? Vitae, quam.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="container mt-3 text-center">
+                    <button  onclick="printCV()"  class="btn background">
+                        Print CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
